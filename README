@@ -1,0 +1,21 @@
+# Task Management App
+
+## Setup
+
+### 1. Run with Docker
+docker-compose up --build
+
+### 2. backend
+http://localhost:7000
+
+### 3. forntend
+http://localhost:3000
+
+## Features
+- JWT Authentication
+- CRUD Task Management
+- Role-based access (Admin/User)
+- MySQL Database
+
+## Test
+Use Postman or browser
