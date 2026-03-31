@@ -19,6 +19,8 @@ class AuthSchema(Schema):
 
 class TokenSchema(Schema):
     access_token = fields.Str()
+    # access_token = create_access_token(identity=str(user.id)
+    # access_token = create_access_token(identity=user.email)
 
 class MessageSchema(Schema):
     msg = fields.Str()
@@ -62,7 +64,8 @@ class LoginResource(MethodView):
             #return jsonify({"msg": "Invalid credentials"}), 401
             return {"msg": "Invalid credentials"}, 401
 
-        token = create_access_token(identity=user.id)
+        #token = create_access_token(identity=user.id)
+        token = create_access_token(identity=str(user.id))
 
         # return jsonify({"access_token": token})
         return {"access_token": token}

@@ -10,7 +10,7 @@ export default function Dashboard() {
   const loadTasks = async () => {
     setLoading(true);
     try {
-      const data = await apiFetch("/tasks");
+      const data = await apiFetch("/tasks/");
       // Make sure tasks is always an array
       setTasks(Array.isArray(data) ? data : data.tasks || []);
     } catch (err) {
@@ -30,8 +30,9 @@ export default function Dashboard() {
     if (!title.trim()) return alert("Task title cannot be empty");
 
     try {
-      await apiFetch("/tasks", {
+      await apiFetch("/tasks/", {
         method: "POST",
+        // body: JSON.stringify({ title: title.trim() }),
         body: JSON.stringify({ title: title.trim() }),
       });
       setTitle("");
@@ -61,6 +62,7 @@ export default function Dashboard() {
     try {
       await apiFetch(`/tasks/${id}`, {
         method: "PUT",
+        // body: JSON.stringify({ title: newTitle.trim() }),
         body: JSON.stringify({ title: newTitle.trim() }),
       });
       loadTasks();

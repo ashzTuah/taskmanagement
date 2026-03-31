@@ -9,12 +9,12 @@ services:
       - "7000:7000"
 
   frontend:
-    build: ./forntend
+    build: ./frontend
     ports:
       - "3000:3000"
 
   db:
-    # image: mysql:8
+    # image: postgres:8
     image: postgres:15
     env_file:
       - ./backend/.env

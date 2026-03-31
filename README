@@ -19,3 +19,21 @@ http://localhost:3000
 
 ## Test
 Use Postman or browser
+
+or
+
+### 1. run local
+- cd backend
+- py app.py
+- http://localhost:7000/swagger
+
+- cd frontend
+- npm install
+- npm start
+- http://localhost:3000/register
+- http://localhost:3000/login
+
+### remark
+database -> using my local postgresql
+swagger -> not fully function
+test using -> dashboard good, postman good

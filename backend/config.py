@@ -16,4 +16,5 @@ class Config:
     )
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    SECRET_KEY = os.getenv("JWT_SECRET")
     JWT_SECRET_KEY = os.getenv("JWT_SECRET")
